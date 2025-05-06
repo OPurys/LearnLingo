@@ -3,6 +3,8 @@
 :root {
   --bg-color: #fff;
   --text-color: #121417;
+
+  /* scrollbar-gutter: stable; */
 }
 
 @theme {
@@ -16,6 +18,9 @@
   --color-lightPeach: #f2c0bd;
   --color-coral: #f0aa8d;
   --color-palePink: #f4c8ba;
+  --color-secondary: #ffdc86;
+  --color-white: #ffffff;
+  --color-black: #121417;
 }
 
 body {
@@ -25,4 +30,5 @@ body {
 
 button {
   cursor: pointer;
+  outline: none;
 }

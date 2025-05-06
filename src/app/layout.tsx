@@ -1,3 +1,4 @@
+import Modal from '@/components/ui/Modal';
 import './globals.css';
 import { Roboto } from 'next/font/google';
 
@@ -18,7 +19,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={roboto.className}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Modal />
+      </body>
     </html>
   );
 }
