@@ -1,10 +1,12 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export const useModal = (isOpen: boolean, onClose: () => void) => {
   const modalRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     if (isOpen) {
+      setIsVisible(true);
       document.body.style.overflow = 'hidden';
 
       // Focus on the modal
@@ -18,23 +20,28 @@ export const useModal = (isOpen: boolean, onClose: () => void) => {
         }
       };
 
-      document.addEventListener('click', handleBackdropClick);
-
       const handleKeyDown = (e: KeyboardEvent) => {
         if (e.key === 'Escape') {
           onClose();
         }
       };
 
+      document.addEventListener('click', handleBackdropClick);
       document.addEventListener('keydown', handleKeyDown);
 
       return () => {
         document.removeEventListener('click', handleBackdropClick);
         document.removeEventListener('keydown', handleKeyDown);
-        document.body.style.overflow = '';
       };
+    } else {
+      const timer = setTimeout(() => {
+        setIsVisible(false);
+        document.body.style.overflow = '';
+      }, 250);
+
+      return () => clearTimeout(timer);
     }
   }, [isOpen, onClose]);
 
-  return modalRef;
+  return { modalRef, isVisible };
 };

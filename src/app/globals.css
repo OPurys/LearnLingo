@@ -21,6 +21,7 @@
   --color-secondary: #ffdc86;
   --color-white: #ffffff;
   --color-black: #121417;
+  --color-textColor: rgba(18, 20, 23, 0.8);
 }
 
 body {
@@ -28,7 +29,43 @@ body {
   color: var(--text-color);
 }
 
+button,
+input {
+  outline: none;
+}
+
 button {
   cursor: pointer;
-  outline: none;
+}
+
+@layer utilities {
+  .animate-slide-in {
+    animation: slide-in 250ms ease-out forwards;
+  }
+
+  .animate-slide-out {
+    animation: slide-out 250ms ease-in forwards;
+  }
+
+  @keyframes slide-in {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-out {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+  }
 }

@@ -1,6 +1,7 @@
 import Modal from '@/components/ui/Modal';
 import './globals.css';
 import { Roboto } from 'next/font/google';
+import { Toaster } from 'react-hot-toast';
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body>
         {children}
         <Modal />
+        <Toaster position="top-right" />
       </body>
     </html>
   );

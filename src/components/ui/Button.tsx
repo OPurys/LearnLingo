@@ -1,4 +1,4 @@
-import { cn } from '@/utils/cn';
+import { cn } from '@/utils';
 import { ButtonHTMLAttributes } from 'react';
 
 type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
@@ -22,8 +22,8 @@ const sizeStyles: Record<Size, string> = {
 const variantStyles: Record<Variant, string> = {
   primary: 'text-lg  bg-yellow hover:bg-secondary focus:bg-secondary',
   secondary:
-    'text-base/5 text-white bg-black hover:opacity-75 focus:opacity-75',
-  ghost: 'text-base/5 hover:opacity-75 focus:opacity-75',
+    'text-base/5 text-white bg-black hover:opacity-75 focus:opacity-75 transition-opacity',
+  ghost: 'text-base/5 hover:opacity-75 focus:opacity-75 transition-opacity',
 };
 
 const Button = ({

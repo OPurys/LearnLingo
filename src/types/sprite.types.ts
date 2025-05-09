@@ -7,5 +7,5 @@ export type spriteTypes =
   | 'icon-log-in'
   | 'icon-online'
   | 'icon-radio'
-  | 'icon-slash'
+  | 'icon-eye-slash'
   | 'icon-star';

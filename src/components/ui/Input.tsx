@@ -1,6 +1,6 @@
 'use client';
 
-import { cn } from '@/utils/cn';
+import { cn } from '@/utils';
 import { ComponentProps } from 'react';
 import { Control, FieldValues, Path, useController } from 'react-hook-form';
 
@@ -27,14 +27,14 @@ const Input = <T extends FieldValues>({
     <label className={cn('mb-4.5 block', labelClassName)}>
       <input
         className={cn(
-          'pl-4.5 h-13.5 rounded-xl border border-solid border-[rgba(18,20,23,0.1)]',
+          'pl-4.5 h-13.5 w-full rounded-xl border border-solid border-[rgba(18,20,23,0.1)] focus:border-yellow transition-colors duration-250',
           inputClassName
         )}
         {...field}
         {...inputProps}
       />
       {error && (
-        <p className="mt-2 text-sm text-red-500">{error.message?.toString()}</p>
+        <p className="mt-1 text-sm text-coral">{error.message?.toString()}</p>
       )}
     </label>
   );

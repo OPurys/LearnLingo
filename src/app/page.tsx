@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div>
       <main>
-        <Button onClick={() => setModal('login')} size="xs" variant="ghost">
+        <Button onClick={() => setModal('register')} size="xs" variant="ghost">
           Log in
         </Button>
       </main>

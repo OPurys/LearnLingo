@@ -1,35 +1,43 @@
 'use client';
 
 import { useModalStore } from '@/stores/modalStore';
-import { useModal } from '@/hooks/useModal';
 import Icon from './Icon';
 import { FocusTrap } from 'focus-trap-react';
+import LoginForm from '../forms/LoginForm';
+import RegisterForm from '../forms/RegisterForm';
+import { useModal, usePreviousModal } from '@/hooks';
+import { cn } from '@/utils';
 
 const Modal = () => {
   const { openModal, closeModal } = useModalStore();
   const isOpen = openModal !== null;
-  const modalRef = useModal(isOpen, closeModal);
+  const { modalRef, isVisible } = useModal(isOpen, closeModal);
+  const modalType = usePreviousModal(openModal, isVisible);
 
-  if (!isOpen) return null;
+  if (!isOpen && !isVisible) return null;
 
-  //   const renderContent = () => {
-  //     switch (openModal) {
-  //       case 'login':
-  //         return <LoginForm />;
-  //       case 'register':
-  //         return <RegisterForm />;
-  //       case 'order':
-  //         return <OrderForm />;
-  //       default:
-  //         return null;
-  //     }
-  //   };
+  const renderContent = () => {
+    switch (modalType) {
+      case 'login':
+        return <LoginForm />;
+      case 'register':
+        return <RegisterForm />;
+      case 'order':
+        return 'Example';
+      // return <OrderForm />;
+      default:
+        return null;
+    }
+  };
 
   return (
     <div
       ref={modalRef}
       tabIndex={-1}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
+      className={cn(
+        'fixed inset-0 z-50 flex items-center justify-center bg-black/50',
+        isOpen ? 'animate-slide-in' : 'animate-slide-out'
+      )}
     >
       <FocusTrap
         focusTrapOptions={{
@@ -42,10 +50,11 @@ const Modal = () => {
           aria-modal="true"
           className="relative rounded-[30px] bg-white p-16 outline-none min-w-[300px]"
         >
-          {/* {renderContent()} */}
-
-          <div>Example Template</div>
-          <button onClick={closeModal} className="absolute top-5 right-5">
+          {renderContent()}
+          <button
+            onClick={closeModal}
+            className="absolute top-5 right-5 hover:opacity-75 focus:opacity-75 transition-opacity duration-250"
+          >
             <Icon id="icon-close" className="stroke-black" w={32} h={32} />
           </button>
         </div>
