@@ -1,16 +1,12 @@
-'use client';
-
-import { useModalStore } from '@/stores/modalStore';
-import Button from '../components/ui/Button';
+import Hero from '@/components/Home/Hero';
+import PlatformMetrics from '@/components/Home/PlatformMetrics';
 
 export default function Home() {
-  const setModal = useModalStore(state => state.setModal);
   return (
     <div>
-      <main>
-        <Button onClick={() => setModal('register')} size="xs" variant="ghost">
-          Log in
-        </Button>
+      <main className="pt-5 pb-8 px-16">
+        <Hero />
+        <PlatformMetrics />
       </main>
     </div>
   );

@@ -4,7 +4,7 @@
   --bg-color: #fff;
   --text-color: #121417;
 
-  /* scrollbar-gutter: stable; */
+  scrollbar-gutter: stable;
 }
 
 @theme {
@@ -22,20 +22,37 @@
   --color-white: #ffffff;
   --color-black: #121417;
   --color-textColor: rgba(18, 20, 23, 0.8);
+  --color-bgGrey: #f8f8f8;
 }
 
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
+  line-height: 1.25;
 }
 
 button,
-input {
+input,
+a {
   outline: none;
 }
 
 button {
   cursor: pointer;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 @layer utilities {
