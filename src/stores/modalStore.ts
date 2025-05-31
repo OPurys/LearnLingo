@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-type ModalType = 'login' | 'register' | 'order' | null;
+type ModalType = 'login' | 'register' | 'book' | null;
 
 interface ModalState {
   openModal: ModalType;

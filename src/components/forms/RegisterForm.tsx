@@ -22,7 +22,6 @@ const RegisterForm = () => {
   });
 
   const onSubmit: SubmitHandler<FormData> = data => {
-    console.log(data);
     toast.success('Your account has been successfully registered');
     reset();
   };

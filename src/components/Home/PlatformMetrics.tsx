@@ -7,7 +7,7 @@ const platformMetrics = [
 
 const PlatformMetrics = () => {
   return (
-    <section className="border-[1.5px] border-dashed border-yellow rounded-[30px] py-10">
+    <section className="border-[1.5px] border-dashed border-yellow rounded-[30px] py-10 max-w-328 mx-auto">
       <h2 className="visually-hidden">PlatformMetrics</h2>
       <ul className="max-w-266.75 flex gap-x-25 mx-auto">
         {platformMetrics.map(({ value, label }) => (

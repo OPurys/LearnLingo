@@ -22,7 +22,9 @@
   --color-white: #ffffff;
   --color-black: #121417;
   --color-textColor: rgba(18, 20, 23, 0.8);
+  --color-blackLight: rgba(18, 20, 23, 0.2);
   --color-bgGrey: #f8f8f8;
+  --color-lightGrey: #8a8a89;
 }
 
 body {

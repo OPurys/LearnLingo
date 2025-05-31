@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const Hero = () => {
   return (
-    <section className="mb-6 grid md:grid-cols-[720px_568px] gap-6">
+    <section className="mb-6 grid md:grid-cols-[720px_568px] gap-6 place-content-center">
       <div className="px-16 py-24.5 rounded-[30px] bg-bgGrey">
         <h1 className="mb-8 font-medium text-5xl/14">
           Unlock your potential with the best{' '}

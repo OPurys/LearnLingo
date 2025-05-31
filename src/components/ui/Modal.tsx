@@ -7,6 +7,7 @@ import LoginForm from '../forms/LoginForm';
 import RegisterForm from '../forms/RegisterForm';
 import { useModal, usePreviousModal } from '@/hooks';
 import { cn } from '@/utils';
+import BookForm from '../forms/BookForm';
 
 const Modal = () => {
   const { openModal, closeModal } = useModalStore();
@@ -22,9 +23,8 @@ const Modal = () => {
         return <LoginForm />;
       case 'register':
         return <RegisterForm />;
-      case 'order':
-        return 'Example';
-      // return <OrderForm />;
+      case 'book':
+        return <BookForm />;
       default:
         return null;
     }
@@ -48,15 +48,15 @@ const Modal = () => {
         <div
           role="dialog"
           aria-modal="true"
-          className="relative rounded-[30px] bg-white p-16 outline-none min-w-[300px]"
+          className="relative rounded-[30px] bg-white p-16 outline-none min-w-[300px] max-h-170 overflow-y-auto"
         >
-          {renderContent()}
           <button
             onClick={closeModal}
             className="absolute top-5 right-5 hover:opacity-75 focus:opacity-75 transition-opacity duration-250"
           >
             <Icon id="icon-close" className="stroke-black" w={32} h={32} />
           </button>
+          {renderContent()}
         </div>
       </FocusTrap>
     </div>

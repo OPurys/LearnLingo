@@ -20,7 +20,7 @@ const AuthMenu = () => {
         Log in
       </Button>
       <Button
-        onClick={() => setModal('register')}
+        onClick={() => setModal('book')}
         type="button"
         size="sm"
         variant="secondary"

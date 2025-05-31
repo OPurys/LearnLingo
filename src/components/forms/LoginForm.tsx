@@ -20,7 +20,6 @@ const LoginForm = () => {
   });
 
   const onSubmit: SubmitHandler<LoginFormData> = data => {
-    console.log(data);
     reset();
   };
 
