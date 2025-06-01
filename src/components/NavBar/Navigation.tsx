@@ -13,7 +13,7 @@ const Navigation = () => {
 
   return (
     <nav>
-      <ul className="flex items-center gap-7">
+      <ul className="flex items-center gap-7 text-base/5">
         <li>
           <Link
             className={cn(

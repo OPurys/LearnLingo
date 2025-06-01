@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 
 :root {
-  --bg-color: #fff;
+  --bg-color: #eee;
   --text-color: #121417;
 
   scrollbar-gutter: stable;
@@ -25,12 +25,12 @@
   --color-blackLight: rgba(18, 20, 23, 0.2);
   --color-bgGrey: #f8f8f8;
   --color-lightGrey: #8a8a89;
+  --color-accentGreen: #38cd3e;
 }
 
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
-  line-height: 1.25;
 }
 
 button,

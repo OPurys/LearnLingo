@@ -44,9 +44,13 @@ const RegisterForm = () => {
             labelClassName="mb-0"
             placeholder="Password"
           />
-          <button type="button" onClick={toggleShow}>
+          <button
+            className="absolute top-4.25 right-4.5"
+            type="button"
+            onClick={toggleShow}
+          >
             <Icon
-              className="absolute top-4.25 right-4.5 fill-none stroke-black"
+              className="fill-none stroke-black"
               id={show ? 'icon-eye' : 'icon-eye-slash'}
               w={20}
               h={20}
