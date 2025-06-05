@@ -10,14 +10,19 @@
 @theme {
   --color-yellow: #f4c550;
   --color-lightYellow: #fbe9ba;
+  --color-macYellow: #d08f38;
   --color-greyGreen: #9fbaae;
   --color-lightGreen: #cbded3;
+  --color-macGreyGreen: #183e49;
   --color-blueGrey: #9fb7ce;
   --color-lightBlue: #bfd6ea;
+  --color-macBlueGrey: #1f385a;
   --color-peach: #e0a39a;
   --color-lightPeach: #f2c0bd;
+  --color-macPeach: #982a27;
   --color-coral: #f0aa8d;
   --color-palePink: #f4c8ba;
+  --color-macCoral: #ca5b38;
   --color-secondary: #ffdc86;
   --color-white: #ffffff;
   --color-black: #121417;
@@ -26,35 +31,8 @@
   --color-bgGrey: #f8f8f8;
   --color-lightGrey: #8a8a89;
   --color-accentGreen: #38cd3e;
-}
 
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-}
-
-button,
-input,
-a {
-  outline: none;
-}
-
-button {
-  cursor: pointer;
-}
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
+  --tracking-tight: -0.02em;
 }
 
 @layer utilities {
@@ -87,4 +65,58 @@ button {
       opacity: 0;
     }
   }
+
+  .skip-ink {
+    text-decoration-skip-ink: none;
+  }
+
+  .border-image-yellow {
+    border-width: 10px;
+    border-image: url('/borders/yellow.png') 10 stretch;
+  }
+  .border-image-green {
+    border-width: 10px;
+    border-image: url('/borders/green.png') 10 stretch;
+  }
+  .border-image-blue {
+    border-width: 10px;
+    border-image: url('/borders/blue.png') 10 stretch;
+  }
+  .border-image-peach {
+    border-width: 10px;
+    border-image: url('/borders/peach.png') 10 stretch;
+  }
+  .border-image-coral {
+    border-width: 10px;
+    border-image: url('/borders/coral.png') 10 stretch;
+  }
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+button,
+input,
+a {
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }

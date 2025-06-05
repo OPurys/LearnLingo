@@ -26,7 +26,9 @@ const BookForm = () => {
 
   return (
     <div>
-      <h2 className="font-medium text-[40px]/12 mb-5">Book trial lesson</h2>
+      <h2 className="mb-5 font-medium text-[40px]/12 tracking-tight">
+        Book trial lesson
+      </h2>
       <p className="mb-5 max-w-118 text-base/5.5 text-textColor">
         Our experienced tutor will assess your current language level, discuss
         your learning goals, and tailor the lesson to your specific needs.

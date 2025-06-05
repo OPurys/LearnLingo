@@ -25,7 +25,7 @@ const LoginForm = () => {
 
   return (
     <div>
-      <h2 className="font-medium text-[40px]/12 mb-5">Log In</h2>
+      <h2 className="mb-5 font-medium text-[40px]/12 tracking-tight">Log In</h2>
       <p className="mb-10 max-w-109.5 text-base/5.5 text-textColor">
         Welcome back! Please enter your credentials to access your account and
         continue your search for an teacher.

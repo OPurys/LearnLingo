@@ -1,14 +1,16 @@
 'use client';
 
+import { useColorStore } from '@/stores/useColorStore';
 import { cn } from '@/utils';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const Navigation = () => {
   const pathname = usePathname();
+  const { text } = useColorStore(state => state.colors);
 
   const getLinkClass = (href: string) => {
-    return pathname === href ? 'text-yellow' : '';
+    return pathname === href ? `${text}` : '';
   };
 
   return (

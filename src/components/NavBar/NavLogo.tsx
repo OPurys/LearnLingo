@@ -6,7 +6,7 @@ const NavLogo = () => {
     <div>
       <Link className="flex items-center gap-2" href="/">
         <Icon id="icon-ukraine" w={28} h={28} />
-        <span className="font-medium text-xl/6">LearnLingo</span>
+        <span className="font-medium text-xl/6 tracking-tight">LearnLingo</span>
       </Link>
     </div>
   );

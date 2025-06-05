@@ -33,7 +33,6 @@ const Modal = () => {
   return (
     <div
       ref={modalRef}
-      tabIndex={-1}
       className={cn(
         'fixed inset-0 z-50 flex items-center justify-center bg-black/50',
         isOpen ? 'animate-slide-in' : 'animate-slide-out'
@@ -48,7 +47,7 @@ const Modal = () => {
         <div
           role="dialog"
           aria-modal="true"
-          className="relative rounded-[30px] bg-white p-16 outline-none min-w-[300px] max-h-170 overflow-y-auto"
+          className="relative rounded-[30px] bg-white p-16 outline-none min-w-[300px] max-h-170 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
         >
           <button
             onClick={closeModal}

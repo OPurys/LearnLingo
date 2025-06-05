@@ -3,9 +3,11 @@
 import { useModalStore } from '@/stores/modalStore';
 import Button from '../ui/Button';
 import Icon from '../ui/Icon';
+import { useColorStore } from '@/stores/useColorStore';
 
 const AuthMenu = () => {
   const setModal = useModalStore(state => state.setModal);
+  const { stroke } = useColorStore(state => state.colors);
 
   return (
     <div className="flex items-center gap-4">
@@ -16,7 +18,7 @@ const AuthMenu = () => {
         size="xs"
         variant="ghost"
       >
-        <Icon id="icon-log-in" w={20} h={20} />
+        <Icon className={`${stroke}`} id="icon-log-in" w={20} h={20} />
         Log in
       </Button>
       <Button

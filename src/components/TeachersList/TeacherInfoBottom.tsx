@@ -3,7 +3,7 @@ const TeacherInfoBottom = () => {
     <ul className="mb-4 font-medium">
       <li className="mb-2">
         <span className="text-lightGrey">Speaks:</span>{' '}
-        <span className="underline">German, French</span>
+        <span className="underline skip-ink">German, French</span>
       </li>
       <li className="mb-2">
         <span className="text-lightGrey">Lesson Info:</span> Lessons are

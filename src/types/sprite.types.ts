@@ -8,5 +8,6 @@ export type spriteTypes =
   | 'icon-online'
   | 'icon-radio'
   | 'icon-mac'
+  | 'icon-apple'
   | 'icon-eye-slash'
   | 'icon-star';

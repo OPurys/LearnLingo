@@ -6,11 +6,11 @@ export default function Home() {
   return (
     <div>
       <main className="pt-5 pb-8 px-16">
-        {/* <Hero />
-        <PlatformMetrics /> */}
+        <Hero />
+        <PlatformMetrics />
+        {/* <TeacherCard />
         <TeacherCard />
-        <TeacherCard />
-        <TeacherCard />
+        <TeacherCard /> */}
       </main>
     </div>
   );

@@ -1,3 +1,6 @@
+'use client';
+
+import { useColorStore } from '@/stores/useColorStore';
 import { cn } from '@/utils';
 import { ButtonHTMLAttributes } from 'react';
 
@@ -20,7 +23,7 @@ const sizeStyles: Record<Size, string> = {
 };
 
 const variantStyles: Record<Variant, string> = {
-  primary: 'text-lg  bg-yellow hover:bg-secondary focus:bg-secondary',
+  primary: 'text-lg',
   secondary:
     'text-base/5 text-white bg-black hover:opacity-75 focus:opacity-75 transition-opacity',
   ghost: 'text-base/5 hover:opacity-75 focus:opacity-75 transition-opacity',
@@ -33,10 +36,14 @@ const Button = ({
   variant = 'primary',
   ...props
 }: ButtonProps) => {
+  const { bgFirst, hoverBg, focusBg } = useColorStore(state => state.colors);
+
   return (
     <button
       className={cn(
-        'h-15 rounded-xl font-bold flex justify-center items-center transition-colors duration-250',
+        variant === 'primary'
+          ? `h-15 rounded-xl font-bold flex ${bgFirst} ${hoverBg} ${focusBg} justify-center items-center transition-colors duration-250`
+          : 'h-15 rounded-xl font-bold flex justify-center items-center transition-colors duration-250',
         sizeStyles[size],
         variantStyles[variant],
         className

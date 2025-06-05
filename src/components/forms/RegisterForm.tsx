@@ -28,7 +28,9 @@ const RegisterForm = () => {
 
   return (
     <div>
-      <h2 className="font-medium text-[40px]/12 mb-5">Registration</h2>
+      <h2 className="mb-5 font-medium text-[40px]/12 tracking-tight">
+        Registration
+      </h2>
       <p className="mb-10 max-w-109.5 text-base/5.5 text-textColor">
         Thank you for your interest in our platform! In order to register, we
         need some information. Please provide us with the following information
