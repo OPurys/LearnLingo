@@ -19,7 +19,7 @@ const Navigation = () => {
         <li>
           <Link
             className={cn(
-              'hover:text-yellow focus:text-yellow transition-colors duration-250 py-3.5',
+              'hover:opacity-70 focus:opacity-70 transition-opacity duration-250 py-3.5',
               getLinkClass('/')
             )}
             href="/"
@@ -30,7 +30,7 @@ const Navigation = () => {
         <li>
           <Link
             className={cn(
-              'hover:text-yellow focus:text-yellow transition-colors duration-250 py-3.5',
+              'hover:opacity-70 focus:opacity-70 transition-opacity duration-250 py-3.5',
               getLinkClass('/teachers')
             )}
             href="/teachers"
@@ -41,7 +41,7 @@ const Navigation = () => {
         <li>
           <Link
             className={cn(
-              'hover:text-yellow focus:text-yellow transition-colors duration-250 py-3.5',
+              'hover:opacity-70 focus:opacity-70 transition-opacity duration-250 py-3.5',
               getLinkClass('/favorites')
             )}
             href="/favorites"
