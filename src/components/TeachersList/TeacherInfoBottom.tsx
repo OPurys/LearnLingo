@@ -1,19 +1,20 @@
-const TeacherInfoBottom = () => {
+import { TeacherProps as TeacherInfoBottomProps } from '@/types';
+
+const TeacherInfoBottom = ({ teacher }: TeacherInfoBottomProps) => {
+  const { languages, lesson_info, conditions } = teacher;
+
   return (
     <ul className="mb-4 font-medium">
       <li className="mb-2">
         <span className="text-lightGrey">Speaks:</span>{' '}
-        <span className="underline skip-ink">German, French</span>
+        <span className="underline skip-ink">{languages.join(', ')}</span>
       </li>
       <li className="mb-2">
-        <span className="text-lightGrey">Lesson Info:</span> Lessons are
-        structured to cover grammar, vocabulary, and practical usage of the
-        language.
+        <span className="text-lightGrey">Lesson Info:</span> {lesson_info}
       </li>
       <li>
-        <span className="text-lightGrey">Conditions:</span> Welcomes both adult
-        learners and teenagers (13 years and above).Provides personalized study
-        plans
+        <span className="text-lightGrey">Conditions:</span>{' '}
+        {conditions.join(' ')}
       </li>
     </ul>
   );
