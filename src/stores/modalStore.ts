@@ -4,12 +4,15 @@ type ModalType = 'login' | 'register' | 'book' | null;
 
 interface ModalState {
   openModal: ModalType;
-  setModal: (type: ModalType) => void;
+  selectedTeacherId: string | null;
+  setModal: (type: ModalType, teacherId?: string | null) => void;
   closeModal: () => void;
 }
 
 export const useModalStore = create<ModalState>(set => ({
   openModal: null,
-  setModal: type => set({ openModal: type }),
-  closeModal: () => set({ openModal: null }),
+  selectedTeacherId: null,
+  setModal: (type, teacherId = null) =>
+    set({ openModal: type, selectedTeacherId: teacherId }),
+  closeModal: () => set({ openModal: null, selectedTeacherId: null }),
 }));

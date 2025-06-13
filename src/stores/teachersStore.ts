@@ -18,9 +18,15 @@ const useTeachersStore = create<TeachersState>(set => ({
   fetchTeachers: () => {
     const teachersRef: DatabaseReference = ref(database, 'teachers');
     const unsubscribe: Unsubscribe = onValue(teachersRef, snapshot => {
-      const data = snapshot.val() as Record<string, Teacher> | null;
+      const data = snapshot.val() as Record<string, Omit<Teacher, 'id'>> | null;
+
       if (data) {
-        set({ teachers: data });
+        const parsed = Object.entries(data).reduce((acc, [id, teacher]) => {
+          acc[id] = { ...teacher, id };
+          return acc;
+        }, {} as Record<string, Teacher>);
+
+        set({ teachers: parsed });
       }
     });
     return unsubscribe;

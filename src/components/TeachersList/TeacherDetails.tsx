@@ -27,7 +27,7 @@ const TeacherDetails = ({ teacher }: TeacherDetailsProps) => {
           className="mt-8"
           type="button"
           size="lg"
-          onClick={() => setModal('book')}
+          onClick={() => setModal('book', teacher.id)}
         >
           Book trial lesson
         </Button>

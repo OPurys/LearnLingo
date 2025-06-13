@@ -3,6 +3,7 @@ import TeacherCard from './TeacherCard';
 
 const TeachersList = () => {
   const teachers = useTeachersStore(state => state.teachers);
+  console.log(teachers);
 
   return (
     <ul>

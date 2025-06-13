@@ -7,8 +7,11 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import Button from '../ui/Button';
 import toast from 'react-hot-toast';
 import Image from 'next/image';
+import { useSelectedTeacher } from '@/hooks';
 
 const BookForm = () => {
+  const teacher = useSelectedTeacher();
+
   const { handleSubmit, control, reset } = useForm<BookFormData>({
     resolver: zodResolver(bookFormSchema),
     defaultValues: {
@@ -35,12 +38,20 @@ const BookForm = () => {
       </p>
 
       <div className="mb-10 flex gap-3.5">
-        <Image src="/teacher.png" alt="teacher" width="44" height="44" />
+        <Image
+          className="rounded-full"
+          src={teacher?.avatar_url ?? '/teacher.png'}
+          alt={teacher?.name ?? 'teacher'}
+          width="44"
+          height="44"
+        />
         <div>
           <p className="mb-1 font-medium text-xs text-lightGrey">
             Your teacher
           </p>
-          <p className="font-medium">Jane Smith</p>
+          <p className="font-medium">
+            {teacher?.name} {teacher?.surname}
+          </p>
         </div>
       </div>
 
